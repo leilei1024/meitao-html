@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>用户中心_美淘网</title>
+    <link rel="shortcut icon" href="images/lg.gif" type="image/x-icon" />
+    <style>
+        * {
+            padding:0px;
+            margin:0px;
+            text-decoration: none;
+        }
+        a {
+            text-decoration:none;
+            color:black;
+        }
+        /*菜单导航*/
+        #all {
+            background: #ff7436;
+            height: 39px;
+        }
+        #nav {
+            height: 39px;
+            /*border:1px solid pink;*/
+            width: 1440px;
+            text-align: center;
+            margin: 0px auto;
+        }
+
+            #nav ul {
+                margin-left: 180px;
+            }
+
+                #nav ul li {
+                    text-align: center;
+                    float: left;
+                    list-style: none;
+                }
+
+                #nav ul .nav1 {
+                    width: 80px;
+                }
+
+                #nav ul li a {
+                    height: 39px;
+                    line-height: 39px;
+                    display: block;
+                    font-weight: bold;
+                    color: white;
+                    text-decoration: none;
+                }
+
+                    #nav ul li a:hover {
+                        background-color: #fa8d31;
+                    }
+                /*以下为设置二级菜单的父定位*/
+                #nav ul .pos {
+                    position: relative;
+                }
+
+                    #nav ul .pos:hover ul {
+                        display: block;
+                    }
+
+                #nav ul .nav1:hover a {
+                    transition: all 0.1s;
+                    transform: rotate(-360deg);
+                }
+
+                #nav ul .pos ul {
+                    position: absolute;
+                    top: 39px;
+                    left: -180px;
+                    height: 220px;
+                    width: 121px;
+                    background-color: #ff7436;
+                    display: none;
+                }
+
+                    #nav ul .pos ul li {
+                        height: 30px;
+                        width: 121px;
+                        line-height: 36px;
+                        text-align: center;
+                    }
+
+
+        #content {
+            width: 985px;
+            margin: 0px auto;
+            overflow: hidden;
+            height:430px;
+        }
+        #content #login {
+            float: right;
+            width: 400px;
+            height: 500px;
+            margin-top:-20px;
+        }
+        #content #register {
+            float: left;
+            width: 550px;
+            height: 500px;
+            position: absolute;
+            top: 180px;
+            margin-top:-20px;
+        }
+        #content fieldset {
+            color: #333;
+            border: 1px solid #dedede;
+        }
+
+        #content legend {
+            height: 36px;
+            font: bold 20px/36px Verdana,Geneva,sans-serif;
+            color: #f8ae00;
+            margin-left: 20px;
+        }
+
+        #content ul {
+            overflow: hidden;
+            margin-left: 12px;
+            width: 100%;
+        }
+            #content ul li {
+                float: left;
+            }
+                #content ul li a {
+                    display: block;
+                    width: 75px;
+                    height: 25px;
+                    line-height: 25px;
+                    text-align: center;
+                    margin-right: 5px;
+                    background: url(images/gray.gif)
+                }
+                    #content ul li a.current {
+                        color:white;
+                        background: url(images/current.gif)
+                    }
+        #register .box {
+            background: #fafafa;
+            overflow: hidden;
+            height: 340px;
+        }
+            #register .box #emailreg, #register .box #phonereg {
+                padding: 15px;
+                height: 302px;
+            }
+        #register ul {
+            list-style: none;
+        }
+
+        #register #emailreg p {
+            margin-bottom: 10px;
+        }
+        #register #phonereg p {
+            margin-bottom: 22px;
+        }
+        #content .txt {
+            border: 1px solid #a5afc3;
+            height: 25px;
+            line-height: 25px;
+        }
+
+        #content select.txt {
+            width: 80px;
+        }
+        #content input:hover {
+            box-shadow:4px 4px 5px #ccc;
+        }
+        #content input.check {
+            width: 100px;
+        }
+
+        #content label {
+            width: 85px;
+            font-size: 12px;
+            display: block;
+            float: left;
+            text-align: right;
+            color: black;
+            font-weight:bold;
+            height: 27px;
+            line-height: 27px;
+        }
+
+        #content input.btn {
+            border: none;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        #login {
+            position: absolute;
+            top: 180px;
+            left: 60%;
+        }
+
+            #login form fieldset {
+                border: 1px solid #ccc;
+                width: 360px;
+            }
+
+                #login form fieldset legend {
+                    font: bold 20px Verdana,Geneva,sans-serif;
+                    color: #F90;
+                    margin-left: 20px;
+                }
+
+                #login form fieldset p {
+                    margin: 10px 0px 10px 20px;
+                }
+
+                #login form fieldset label {
+                    width: 50px;
+                    text-align: right;
+                    display: block;
+                    float: left;
+                    height: 20px;
+                    line-height: 20px;
+                }
+
+            #login form input.txt {
+                border: 1px solid #dedede;
+                width: 220px;
+                height: 20px;
+                line-height: 20px;
+            }
+
+            #login form fieldset p.last {
+                margin-left: 40px;
+            }
+
+                #login form fieldset p.last input.btn {
+                    border: 1px solid #dedede;
+                    height: 25px;
+                    line-height: 25px;
+                    width: 40px;
+                    text-align: center;
+                    font: bold 12px Verdana,Geneva,sans-serif;
+                }
+
+        #vip {
+            background: #fafafa;
+            overflow: hidden;
+            height: 302px;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="head--bb2.html" width="100%" frameborder="0" scrolling="no" height="104px"></iframe>
+<!--    <iframe src="menu.html" width="100%" frameborder="0" scrolling="no" height="285px"></iframe>-->
+        <div id="all">
+            <div id="nav">
+                <ul>
+                    <li style="width: 121px;" class="pos"><a href="#">全部商品分类</a>
+                        <!--<ul>
+                            <li><a href="#">美食</a></li>
+                            <li><a href="#">旅游</a></li>
+                            <li><a href="#">酒店</a></li>
+                            <li><a href="#">电影</a></li>
+                            <li><a href="#">KTV</a></li>
+                            <li><a href="#">时尚</a></li>
+                            <li><a href="#">生活服务</a></li>
+                        </ul>-->
+                    </li>
+                    <li class="nav1"><a href="index.html" target="_blank">首页</a></li>
+                    <li class="nav1"><a href="#">团购</a></li>
+                    <li class="nav1"><a href="#">美食</a></li>
+                    <li class="nav1"><a href="#">电影</a></li>
+                    <li class="nav1"><a href="#">KTV</a></li>
+                    <li class="nav1"><a href="#">酒店订票</a></li>
+                    <li class="nav1"><a href="#">购物</a></li>
+                    <li class="nav1"><a href="#">品牌特卖</a></li>
+                </ul>
+            </div>
+        </div>
+    <div id="content">
+            <div id="register">
+                <form>
+                    <fieldset>
+                        <legend>注册新用户</legend>
+                        <ul>
+                            <li><a href="#emailreg" class="current">邮箱注册</a></li>
+                            <li><a href="#phonereg">手机注册</a></li>
+                        </ul>
+                        <div class="box">
+                            <div id="emailreg">
+                                <p>
+                                    <label for="txtEmail">邮箱：</label>
+                                    <input name="" type="text" class="txt" id="txtEmail" />
+                                    <span>推荐使用qq邮箱</span>
+                                </p>
+                                <p>
+                                    <label for="userName" accesskey="n">用户名：</label>
+                                    <input name="" type="text" class="txt" id="userName" />
+                                    <span>4-16字符,不能包含数字</span>
+                                </p>
+                                <p>
+                                    <label for="pwd1">创建密码：</label>
+                                    <input name="" type="text" class="txt" id="pwd1" />
+                                    <span>6-32字符</span>
+                                </p>
+                                <p>
+                                    <label for="pwd2">确认密码：</label>
+                                    <input name="" type="text" class="txt" id="pwd2" />
+                                    <span>请再次输入密码</span>
+                                </p>
+                                <p>
+                                    <label for="city">所在城市：</label>
+                                    <select class="txt" id="city">
+                                        <option>--省--</option>
+                                        <option>北京</option>
+                                        <option>湖北</option>
+                                    </select>
+                                    <select class="txt">
+                                        <option>--市区--</option>
+                                        <option>北京</option>
+                                        <option>武汉</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <label>验证码：</label>
+                                    <input name="" type="text" class="txt check" />
+                                    <img src="images/code_img.gif" style="vertical-align:bottom" />
+                                </p>
+                                <p>
+                                    <input type="image" class="btn" src="images/register.jpg" />
+                                    <a href="#" style="font-size:2px;">《美淘网用户协议》</a>
+                                </p>
+                            </div>
+                            <div id="phonereg" style="padding:20px;">
+                                <p>
+                                    <label>电话：</label>
+                                    <input name="" type="text" class="txt" />
+                                    <span>用于登录和找回密码,不会公开</span>
+                                </p>
+                                <p>
+                                    <label>短信验证码：</label>
+                                    <input name="" type="text" class="txt" />
+                                    <span>请输入手机收到的验证码</span>
+                                </p>
+                                <p>
+                                    <label>创建密码：</label>
+                                    <input name="" type="text" class="txt" />
+                                    <span>6-32字符,可使用丶数字丶字符</span>
+                                </p>
+                                <p>
+                                    <label>确认密码：</label>
+                                    <input name="" type="text" class="txt" />
+                                    <span>请再次输入密码</span>
+                                </p>
+                                <p>
+                                    <input type="image" class="btn" src="images/register.jpg" />
+                                    <a href="#" style="font-size:2px;">《美淘网用户协议》</a>
+                                </p>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="login">
+                <form action="">
+                    <fieldset>
+                        <legend>登录MEITAO.COM</legend>
+                        <ul>
+                            <li style="list-style:none;"><a href="#emails" class="current">邮箱登录</a></li>
+                            <li style="list-style:none;"><a href="#phones">手机登录</a></li>
+                        </ul>
+                        <div id="vip">
+                            <div id="emails" style="height:302px;padding:15px 30px;">
+                                <p>
+                                    <label for="userName" accesskey="n">邮箱：</label>
+                                    <input type="text" id="Text1" class="txt" />
+                                </p>
+                                <p>
+                                    <label for="userPwd" accesskey="p">密码：</label>
+                                    <input type="password" id="userPwd" class="txt" />
+                                </p>
+                                <p class="last" style="overflow:hidden;">
+                                    <a href="#" style="display:block;float:left;"><img src="images/login.jpg" /></a>
+                                    <a href="#" style="font-size:2px;height:30px;line-height:30px;display:block;float:left;margin-left:2px;">忘记密码？</a>
+                                </p>
+                            </div>
+                            <div id="phones" style="height:302px;padding:15px 30px;">
+                                <p>
+                                    <label for="userName" accesskey="n">手机号：</label>
+                                    <input type="text" id="Text2" class="txt" />
+                                </p>
+                                <p>
+                                    <label for="userPwd" accesskey="p">密码：</label>
+                                    <input type="password" id="Password1" class="txt" />
+                                </p>
+                                <p class="last" style="overflow:hidden;">
+                                    <a href="#" style="display:block;float:left;"><img src="images/login.jpg" /></a>
+                                    <a href="#" style="font-size:2px;height:30px;line-height:30px;display:block;float:left;margin-left:2px;">忘记密码？</a>
+                                </p>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    <iframe src="foot--bb2.html" width="100%" frameborder="0" scrolling="no" height="185px"></iframe>
+</body>
+</html>

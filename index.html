@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>美淘网_每天淘一次</title>
+    <link rel="shortcut icon" href="images/lg.gif" type="image/x-icon" />
+    <style type="text/css">
+        body {
+            font-weight:bold;
+            margin:0px;
+            text-align:center;
+        }
+        #middle {
+            margin-top:-9px;
+        }
+        #nav, #mtop, #mbottom {
+            margin:0px auto;
+            width:985px;
+        }
+        /*#mtop {
+            border:1px solid #000;
+            height:271px;
+        }*/
+        #navlist {
+            border:1px solid white;
+            height:271px;
+            width:121px;
+            float:left;
+        }
+        #navlist ul {
+            margin-left:-40px;
+            margin-top:-1px;
+            position:relative;
+            list-style:none;    
+        }
+        /*以下为绝对于全部商品分类下的定位*/
+        #navlist ul {
+           position:absolute;
+           top:155px;
+           left:185px;    
+        }
+        #navlist ul li a{
+            color:white;
+            padding:1.5px;
+            display:block;
+            height:36px;
+            width:118px;
+            background-color:#fa8d31;
+            text-decoration:none;        
+        }
+        #navlist ul li:hover a{
+            background-color:#ffae2e;            
+        }
+        #navlist ul li:hover div{
+           display:block;            
+        }
+        #navlist ul li div{ 
+            position:absolute;
+            left:161px;
+            top:0px;
+            width:150px;
+            height:273px;
+            background-color:#ffae2e;
+            display:none;    
+        }
+        /*#navlist ul li div ul{ 
+            font-size:15px;
+            color:white;
+            margin-left:-200px;
+        }
+        #navlist ul li div ul li{ 
+            text-align:left;
+            float:left;
+            padding:10px;
+            line-height:20px;
+        }*/
+        #allnav {
+            height:39px;
+            background:#ff7436;    
+        }
+        #nav {
+            height:39px;
+            /*border:1px solid pink;*/
+            width:1440px;
+        }
+        #nav ul {
+            margin-left:145px;    
+        }
+        /*以下为设置二级菜单的父定位*/
+        #nav ul .pos {
+           position:relative;    
+        }
+        #nav ul li{ 
+            /*margin-left:32px;*/
+            /*line-height:35px;*/
+            float:left;
+            list-style:none;
+        }
+        #nav ul .nav1 {
+           width:80px;
+        }
+        #nav ul li a{ 
+           /*padding:0px 30px;*/
+           height:39px;
+           line-height:39px;
+           display:block;
+           font-weight:bold;
+           color:white;
+           text-decoration:none;
+        }
+        #nav ul li a:hover{ 
+            background-color:#fa8d31;       
+        }
+        #content {
+            float:left;
+            height:273px;
+            width:850px;
+            margin-left:12px;
+        }
+        #type {
+            margin-left:-20px;
+            border:1px solid white;
+            height:54px;
+        }
+        #type ul{
+            clear:both;
+            margin-top:3px;
+            margin-left:-40px;
+            font-size:10px;
+        }
+        #type ul a{            
+            text-decoration:none;
+            color:black;
+        }
+        #type ul a:hover{            
+            color:orange;
+        }
+        #type ul .title {
+            font-size:15px;
+        }
+        #type ul li{
+            float:left;
+            list-style:none;
+            line-height:25px;
+            padding-left:18px;
+        }
+        /*图片精灵*/
+        #content #type ul span {
+            width:19px;
+            height:21px;
+            display:block;
+            background-image:url(images/icon.gif); 
+            float:left;
+        }
+        #content #type ul .bus1 {
+            background-position:0px 135px;    
+        }
+        #content #type ul .bus2 {
+            background-position:0px 112px;    
+        }
+        /*以下本周精选*/
+        #week {
+            margin-left:-20px;
+            /*border:1px solid #ff6a00;*/
+            height:214px;
+        }
+        #mtop #content #week #text {
+            margin-left:18px;
+            font-size:15px;    
+            text-align:left;
+        }
+        #mtop #content #week span {
+            width:19px;
+            height:21px;
+            display:block;
+            background-image:url(images/icon.gif); 
+            background-position:0px 87px;
+            float:left;
+        }
+        #mtop #content #week #photo div {
+            float:left;
+            height:175px;
+            width:290px;
+            margin-left:-25px;
+            margin-top:6px;
+        }
+        /*以上本周精选*/
+        /*#mbottom {
+            border:1px solid #000;
+            height:500px; 
+            overflow:hidden;
+        }*/
+        /*以下团购精选*/
+        #goods {
+            float:left;
+            height:1008px;
+            width:735px;
+            border:3px solid white;
+            position:relative;
+        }
+        #goods #text1 {
+            margin-left:1px;
+            font-size:15px;    
+            text-align:left;
+        }
+        #goods .text1 {
+            position:absolute;
+            width:19px;
+            height:21px;
+            display:block;
+            background-image:url(images/icon.gif); 
+            background-position:0px 66px;
+            float:left;   
+        }
+        #mbottom #goods dl {
+            float:left;
+            border: 1px solid #ccc;
+            height: 320px;
+            width: 350px;
+            margin: 5px;
+        }
+        #mbottom #goods dl:hover {
+                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                 transition:all 0.5s;
+        }
+        #mbottom #goods dl dt {
+            float:left;
+        }
+        #goods dl dd{
+            text-align:left;
+            line-height:22px;
+            margin-left:8px;
+            margin-top:3px;
+        }
+        #mbottom #goods .discount {
+            color:orange;
+            font-size:20px;
+            margin-right:5px;        
+        }
+        #mbottom #goods .price {
+            text-decoration:line-through;        
+        }
+        /*以上团购精选*/
+        /*以下广告*/
+        @keyframes myfirst
+        {
+	        0%   {left:0px; top:200px;}
+	        25%  {left:0px; top:300px;}
+	        50%  {left:0px; top:200px;}
+	        75%  {left:0px; top:300px;}
+	        100% {left:0px; top:200px;}
+        }
+        #left {
+             animation:myfirst 10s;
+             animation-iteration-count:infinite;/*周期播放*/
+             position:fixed;
+             top:200px;
+             left:0px;
+        }
+        #right {
+             position:fixed;
+             top:200px;
+             right:0px;
+        }
+        /*以上广告*/
+        /*以下为商品文字的文字特效*/
+        #mbottom #goods #dll dl .D2{
+            position:relative;            
+        }
+        #mbottom #goods #dll dl .D2 p {
+            position:absolute;
+            top:182px;
+            left:0px;
+            height:30px;
+            width:350px;
+            color:white;
+            background-color:black;
+            opacity:0.6;
+            margin-top:0px;  
+            text-align:center;
+            line-height:30px; 
+            display:none;
+        }
+        #mbottom #goods #dll dl .D2:hover p {
+            display:block;
+        } 
+        /*以上为商品文字的文字特效*/
+        #side {
+            margin-top:28px;   
+            float:right;
+            height:475px;
+            width:240px;
+            border:1px solid #ccc;
+        }
+        #side p {
+            text-align:left;
+            margin-left:10px;
+            margin-top:0px;
+        }
+        #nav ul .nav1:hover a{
+           transition:all 0.1s;
+           transform:rotate(-360deg);  
+        }
+        
+         
+    </style>
+</head>
+<body>
+    <iframe src="head--bb2.html" width="100%" frameborder="0" scrolling="no" height="104px"></iframe>
+    <div id="middle">
+        <div id="allnav">
+            <div id="nav">
+                <ul>
+                    <li style="width:121px;" class="pos"><a href="#">全部商品分类</a></li>
+                    <li class="nav1"><a href="#">首页</a></li>
+                    <li class="nav1"><a href="detail.html" target="_blank">团购</a></li>
+                    <li class="nav1"><a href="#">美食</a></li>
+                    <li class="nav1"><a href="#">电影</a></li>
+                    <li class="nav1"><a href="#">KTV</a></li>
+                    <li class="nav1"><a href="#">酒店订票</a></li>
+                    <li class="nav1"><a href="#">购物</a></li>
+                    <li class="nav1"><a href="#">品牌特卖</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mtop">
+            <div id="navlist"><!--导航菜单的下拉列表-->
+                <ul>
+                    <li class="pos1"><a href="#">美食</a>
+                        <div>1
+                            <!--<ul>
+                                <li>肯德基</li>
+                                <li>麦当劳</li>
+                            </ul>
+                           <ul>
+                                <li>绝味系列</li>
+                                <li>方便面</li>
+                            </ul>
+                            <ul>
+                                <li>坚果系列</li>
+                                <li>果干</li>
+                            </ul>-->
+                        </div>
+                    </li>
+                    <li><a href="#">旅游</a>
+                        <div>2</div>
+                    </li>
+                    <li><a href="#">酒店</a> 
+                        <div>3</div>
+                    </li>
+                    <li><a href="#">电影</a>
+                        <div>4</div>
+                    </li>
+                    <li><a href="#">KTV</a>
+                        <div>5</div>
+                    </li>
+                    <li><a href="#">时尚</a>
+                        <div>6</div>
+                    </li>
+                    <li><a href="#">生活服务</a>
+                        <div>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="content">
+                <div id="type"><!--分类搜索-->
+                    <ul>
+                        <li class="title" style="cursor:pointer;"><span class="bus1"></span>热门团购</li>
+                        <li><a href="#">代金券</a></li>
+                        <li><a href="#">火锅</a></li>
+                        <li><a href="#">自助餐</a></li>
+                        <li><a href="#">KTV</a></li>
+                        <li><a href="#">电影</a></li>
+                        <li><a href="#">美发</a></li>
+                        <li><a href="#">川湘菜</a></li>
+                        <li><a href="#">足疗按摩</a></li>
+                        <li><a href="#">服装</a></li>
+                        <li><a href="#">烧烤烧肉</a></li>
+                    </ul>
+                    <ul>
+                        <li class="title"  style="cursor:pointer;"><span class="bus2"></span>热门商圈</li>
+                        <li><a href="#">武昌区</a></li>
+                        <li><a href="#">江汉区</a></li>
+                        <li><a href="#">汉阳区</a></li>
+                        <li><a href="#">江岸区</a></li>
+                        <li><a href="#">娇口区</a></li>
+                        <li><a href="#">青山区</a></li>
+                        <li><a href="#">光谷高新</a></li>
+                        <li><a href="#">东西湖区</a></li>
+                    </ul>   
+                </div>      
+                <div id="week">
+                    <div id="text" style="cursor:pointer;"><span></span>本周精选</div>
+                    <div id="photo">
+                        <div>
+                            <img src="images/week1.jpg"/>
+                        </div>
+                        <div>
+                            <img src="images/week2.jpg"/>
+                        </div>
+                        <div>
+                            <img src="images/week3.jpg"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mbottom">
+            <div id="goods">
+                <div id="text1"><span class="text1"></span>&nbsp&nbsp&nbsp&nbsp团购精选</div>
+                <div id="dll">
+                    <dl>
+                        <dt class="D2">
+                            <a href="#"><img src="images/good1.jpg"/></a>
+                            <p>包河区汉庭连锁酒店（地铁一号线旁）</p>
+                        </dt>
+                        <dd class="name">【首义汇/阅马场】 汉庭连锁酒店</dd>
+                        <dd>住宿一晚，房型四4选1，免费提供WIFI，多张美淘券</dd>
+                        <dd>
+                            <span class="discount">￥119</span>门店价
+                            <span class="price">￥199</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="D2">
+                            <a href="#"><img src="images/good2.jpg"/></a>
+                            <p>包河区大渔铁板烧（地铁一号线旁）</p>
+                        </dt>
+                        <dd class="name">【3店通用】 大渔铁板烧</dd>
+                        <dd>单人可口自助套餐，与精美菜品的一场冰火约会</dd>
+                        <dd>
+                            <span class="discount">￥149</span>门店价
+                            <span class="price">￥224</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="D2">
+                            <a href="#"><img src="images/good3.jpg"/></a>
+                            <p>包河区如家快捷酒店（地铁一号线旁）</p>
+                        </dt>
+                        <dd class="name">【多城市】 如家快捷酒店</dd>
+                        <dd>住宿1晚(标准双人房/商务大床房2选1)</dd>
+                        <dd>
+                            <span class="discount">￥119</span>门店价
+                            <span class="price">￥199</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="D2">
+                            <a href="#"><img src="images/good4.jpg"/></a>
+                            <p>包河区东北人烤肉（地铁一号线旁）</p>
+                        </dt>
+                        <dd class="name">【5店通用】 东北人烤肉</dd>
+                        <dd>代金券1张，代金券可叠加使用</dd>
+                        <dd>
+                            <span class="discount">￥36</span>门店价
+                            <span class="price">￥50</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="D2">
+                            <a href="#"><img src="images/good5.jpg"/></a>
+                            <p>包河区金逸影城（地铁一号线旁）</p>
+                        </dt>
+                        <dd class="name">【王家湾】 金逸影城</dd>
+                        <dd>2D电影票一张，可升级为3D电影票、VIP厅</dd>
+                        <dd>
+                            <span class="discount">￥30</span>门店价
+                            <span class="price">￥75</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt class="D2">
+                            <a href="#"><img src="images/good6.jpg"/></a>
+                            <p>包河区光谷资本大厦4楼（光谷广场准盘旁）</p>
+                        </dt>
+                        <dd class="name">【光谷/鲁巷】 巨幕影城</dd>
+                        <dd>电影票1张，2D/3D可兑，另有升级方案</dd>
+                        <dd>
+                            <span class="discount">￥22.5</span>门店价
+                            <span class="price">￥130</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="side">
+                <p>热门主题</p>
+                <div id="img">
+                    <img src="images/hottopic1.jpg"/>
+                    <img src="images/hottopic2.jpg"/>
+                    <img src="images/hottopic3.jpg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="left"><a href="hottopic.html" target="_blank"><img src="images/ban.jpg"/></a></div>
+    <div id="right"><a href="hottopic.html" target="_blank"><img src="images/ban.jpg"/></a></div>
+    <iframe src="foot--bb2.html" width="100%" frameborder="0" scrolling="no" height="185px"></iframe>
+</body>
+</html>

@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>购物车_美淘网</title>
+    <link href="./css/global.css" rel="Stylesheet" type="text/css" />
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        /*中间导航*/
+        
+        #content {
+            width: 985px;
+            margin: 20px auto;
+            /*position:relative;
+            z-index:-1;*/
+        }
+        /*中间内容子块：订单表*/
+        
+        #ordertable {
+            padding: 20px;
+            border: 1px solid #dedede;
+            height: 370px;
+        }
+        
+        #ordertable ul li {
+            float: left;
+            height: 78px;
+            font: bold 25px/78px verdana, geneva, sans-serif;
+        }
+        
+        #ordertable ul li.step {
+            background: url(./images/cart/step1.jpg) no-repeat center;
+            width: 679px;
+            margin-left: 30px;
+        }
+        
+        #ordertable .btn {
+            border: 1px solid #dedede;
+            background-color: white;
+            width: 16px;
+            height: 16px;
+        }
+        
+        #ordertable .txt {
+            width: 60px;
+            height: 30px;
+            border: 1px solid #dedede;
+            text-align: center;
+            font: bold 15px/30px verdana, geneva, sans-serif;
+        }
+        
+        #ordertable .txt:hover {
+            border: 1px solid red;
+        }
+        
+        #ordertable table {
+            border: 1px solid #dedede;
+            border-collapse: collapse;
+            width: 100%;
+            clear: both;
+        }
+        
+        #ordertable table tr {
+            height: 50px;
+            border-bottom: 1px dashed #dedede;
+        }
+        
+        #ordertable table td,
+        #ordertable th {
+            text-align: center;
+            vertical-align: central;
+        }
+        /*调整单元格宽度*/
+        
+        #ordertable table td.item {
+            width: 260px;
+            height: 60px;
+            text-align: left;
+        }
+        
+        #ordertable table td.item img {
+            margin-right: 10px;
+            vertical-align: baseline;
+        }
+        /*总体水平靠右*/
+        
+        #ordertable table tr td.cal {
+            text-align: right;
+        }
+        
+        #ordertable table tr td.cal span {
+            font: bold 25px verdana, geneva, sans-serif;
+            color: orange;
+        }
+        
+        #ordertable p {
+            text-align: right;
+        }
+        /*最近浏览*/
+        
+        #lastview {
+            margin-top: 20px;
+            border: 1px solid #dedede;
+            padding: 20px;
+            height: 244px;
+        }
+        
+        #lastview h2 {
+            margin: -5px 0px 8px 0px;
+        }
+        
+        #lastview dl {
+            float: left;
+            height: 222px;
+            width: 210px;
+            margin-right: 20px;
+        }
+        
+        #lastview dl dd {
+            line-height: 25px;
+        }
+        
+        #lastview dl dd span {
+            font: bold 15px verdana, geneva, sans-serif;
+            color: #c30;
+        }
+        
+        #lastview dl dd.price {
+            float: left;
+        }
+        
+        #lastview dl dd .num {
+            float: right;
+        }
+        
+        #lastview dl dd.add {
+            clear: both;
+            float: right;
+        }
+        
+        #lastview dl dd.add a {
+            color: #f90;
+        }
+        
+        #lastview dl dd.add a:hover {
+            text-decoration: underline;
+        }
+        
+        #lastview dl dd.add span {
+            background: url(./images/icon.gif) 0px -85px;
+            width: 18px;
+            height: 33px;
+            display: block;
+            float: left;
+            margin-top: 2px;
+        }
+        /*菜单导航*/
+        
+        #all {
+            background: #ff7436;
+            height: 39px;
+        }
+        
+        #nav {
+            height: 39px;
+            /*border:1px solid pink;*/
+            width: 1440px;
+            text-align: center;
+            margin: 0px auto;
+        }
+        
+        #nav ul {
+            margin-left: 180px;
+        }
+        
+        #nav ul li {
+            text-align: center;
+            float: left;
+            list-style: none;
+        }
+        
+        #nav ul .nav1 {
+            width: 80px;
+        }
+        
+        #nav ul li a {
+            height: 39px;
+            line-height: 39px;
+            display: block;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        #nav ul li a:hover {
+            background-color: #fa8d31;
+        }
+        /*以下为设置二级菜单的父定位*/
+        
+        #nav ul .pos {
+            position: relative;
+        }
+        
+        #nav ul .pos:hover ul {
+            display: block;
+        }
+        
+        #nav ul .nav1:hover a {
+            transition: all 0.1s;
+            transform: rotate(-360deg);
+        }
+        
+        #nav ul .pos ul {
+            position: absolute;
+            top: 39px;
+            left: -180px;
+            height: 220px;
+            width: 121px;
+            background-color: #ff7436;
+            display: none;
+        }
+        
+        #nav ul .pos ul li {
+            height: 30px;
+            width: 121px;
+            line-height: 36px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="head--bb2.html" width="100%" height="104" scrolling="no" frameborder="0"></iframe>
+    <div id="middle">
+        <div id="all">
+            <div id="nav">
+                <ul>
+                    <li style="width: 121px;" class="pos"><a href="#">全部商品分类</a>
+                        <ul>
+                            <li><a href="#">美食</a></li>
+                            <li><a href="#">旅游</a></li>
+                            <li><a href="#">酒店</a></li>
+                            <li><a href="#">电影</a></li>
+                            <li><a href="#">KTV</a></li>
+                            <li><a href="#">时尚</a></li>
+                            <li><a href="#">生活服务</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav1"><a href="index.html" target="_blank">首页</a></li>
+                    <li class="nav1"><a href="#">团购</a></li>
+                    <li class="nav1"><a href="#">美食</a></li>
+                    <li class="nav1"><a href="#">电影</a></li>
+                    <li class="nav1"><a href="#">KTV</a></li>
+                    <li class="nav1"><a href="#">酒店订票</a></li>
+                    <li class="nav1"><a href="#">购物</a></li>
+                    <li class="nav1"><a href="#">品牌特卖</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div id="ordertable">
+                <!--<h2>订单表</h2>-->
+                <ul>
+                    <li>
+                        <img src="./images/cart/g1.jpg" /></li>
+                    <li>我的购物车</li>
+                    <li class="step"></li>
+                </ul>
+                <form>
+                    <table>
+                        <tr>
+                            <th>
+                                <input type="checkbox" checked="checked" />全选</th>
+                            <th>项目</th>
+                            <th>状态</th>
+                            <th>类型/数量</th>
+                            <th>单价</th>
+                            <th>小计</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" checked="checked" /></td>
+                            <td class="item">
+                                <a href="detail.html">
+                                    <img src="./images/cart/item1.jpg" align="left" /> 欢乐空间量版式KTV：欢唱套餐2选1，国家法定节假日需到店另付20元，可升级
+                                </a>
+                            </td>
+                            <td>可购买</td>
+                            <td>
+                                <input type="button" value="-" class="btn" />
+                                <input class="txt" type="text" value="1" />
+                                <input class="btn" type="button" value="+" />
+                            </td>
+                            <td>&yen;39.9</td>
+                            <td>&yen;39.9</td>
+                            <td><a href="#">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" checked="checked" /></td>
+                            <td class="item">
+                                <a href="detail.html">
+                                    <img src="./images/cart/item2.jpg" align="left" /> 途乐时尚主题量版式KTV：任选1小时欢唱，可升级，提供免费WiFi
+                                </a>
+                            </td>
+                            <td>可购买</td>
+                            <td>
+                                <input type="button" value="-" class="btn" />
+                                <input class="txt" type="text" value="1" />
+                                <input class="btn" type="button" value="+" />
+                            </td>
+                            <td>&yen;3</td>
+                            <td>&yen;3</td>
+                            <td><a href="#">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" class="cal">已选<span>2</span>件商品 应付总额：<span>￥42.9</span></td>
+                        </tr>
+                    </table>
+                    <p>
+                        <a href="check.html">
+                            <img src="./images/cart/tj.png" style="margin-top: 15px;" /></a>
+                    </p>
+                </form>
+            </div>
+            <div id="lastview">
+                <h2>购买了本团购的用户还看了</h2>
+                <dl>
+                    <dt>
+                        <img src="./images/cart/view1.jpg" /></dt>
+                    <dd>【西北湖】金鲨国际美食百汇：自助晚餐1位，西北湖店需到店补差价...</dd>
+                    <dd class="price"><span>￥118</span>门店价168</dd>
+                    <dd class="num">已售<span>1691</span></dd>
+                    <dd class="add"><span></span><a href="#">加入购物车</a></dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="./images/cart/view2.jpg" /></dt>
+                    <dd>【台北路/香港路】金色池塘：单人晚餐自助，提供WiFi</dd>
+                    <dd class="price"><span>￥109</span>门店价138</dd>
+                    <dd class="num">已售<span>2169</span></dd>
+                    <dd class="add"><span></span><a href="#">加入购物车</a></dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="./images/cart/view3.jpg" /></dt>
+                    <dd>【六渡桥/汉正街】金钱豹国际美食百汇：单人晚餐，免费WiFi,...</dd>
+                    <dd class="price"><span>￥198</span>门店价238</dd>
+                    <dd class="num">已售<span>349</span></dd>
+                    <dd class="add"><span></span><a href="#">加入购物车</a></dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="./images/cart/view1.jpg" /></dt>
+                    <dd>【7店通用】巴犀烧烤：贵宾消费卡1张，除特价品种、酒水外全场通...</dd>
+                    <dd class="price"><span>￥299</span>门店价300</dd>
+                    <dd class="num">已售<span>245</span></dd>
+                    <dd class="add"><span></span><a href="#">加入购物车</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <iframe src="foot--bb2.html" width="100%" scrolling="no" frameborder="0" height="120"></iframe>
+</body>
+
+</html>

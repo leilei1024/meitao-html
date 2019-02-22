@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>美淘网页眉</title>
+    <link href="./css/global.css" rel="Stylesheet" type="text/css" />
+    <style type="text/css">
+        #header #all {
+            width: 100%;
+            /*自适应宽度，占据整个屏幕*/
+            height: 33px;
+            background-color: #fbfbfb
+        }
+        
+        #menu,
+        #search {
+            width: 985px;
+            /*内容固定宽度*/
+            margin: 0px auto;
+            /*固定宽度且居中*/
+        }
+        
+        #menu {
+            height: 33px;
+            /* border:1px solid pink;*/
+        }
+        /*每项通用的样式*/
+        
+        #menu ul li {
+            float: left;
+            line-height: 33px;
+            height: 33px;
+        }
+        
+        #menu ul li.city {
+            width: 620px;
+            font-weight: bold;
+        }
+        
+        #menu ul li.space {
+            margin: 0px 10px;
+        }
+        
+        #search ul li {
+            float: left;
+            height: 73px;
+            line-height: 73px;
+        }
+        
+        #search ul li.logo {
+            margin-right: 150px;
+        }
+        
+        #search ul li.se {
+            padding-top: 15px;
+            height: 48px;
+        }
+        
+        #search input#setxt {
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #ff7701;
+            width: 305px;
+        }
+        
+        #search input#setxt:hover {
+            box-shadow: 4px 4px 5px #ccc;
+        }
+        
+        #search input#btn {
+            width: 70px;
+            height: 42px;
+            line-height: 42px;
+            background-color: #ff7701;
+            border: none;
+        }
+        
+        #search ul li.keyword {
+            margin: 0px 7px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="all">
+            <!--背景色占据整个屏幕-->
+            <div id="menu">
+                <ul>
+                    <li class="city">武汉<a href="#">[切换城市]</a></li>
+                    <li style="color:#ff6a00;">美淘，每天淘一次</li>
+                    <li class="space"><a href="#">我的美淘</a></li>
+                    <li class="space"><a href="#">购物车</a></li>
+                    <li class="space"><a href="Login.html" target="_blank">[登录]</a></li>
+                    <li class="space"><a href="Login.html" target="_blank">[注册]</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--页眉菜单结束-->
+        <div id="search">
+            <ul>
+                <li class="logo">
+                    <a href="index.html" style="width:73px;"><img src="images/logo.jpg" width="304" height="73" /></a>
+                </li>
+                <li class="se">
+                    <form action="#">
+                        <input type="text" id="setxt" placeholder="请输入搜索内容" /><input type="button" value="搜搜" id="btn" style="position:relative;top:-1px;left:0px;cursor:pointer" />
+                    </form>
+                </li>
+                <li class="keyword"><a href="#">旅游</a></li>
+                <li class="keyword"><a href="#">酒店</a></li>
+                <li class="keyword"><a href="#">KTV</a></li>
+            </ul>
+        </div>
+        <!--页眉搜索结束-->
+    </div>
+</body>
+
+</html>
